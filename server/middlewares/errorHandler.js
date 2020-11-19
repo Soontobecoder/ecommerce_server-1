@@ -1,7 +1,7 @@
 
 module.exports = function(err, req, res, next){
-    console.log(err, "masuk ke sini bro")
-    let status = 500
+    console.log( err, "masuk ke sini bro")
+    let status = err.status || 500
     let msg = err.name || "internal server error"
     if (msg === "SequelizeValidationError"){
         status = 400

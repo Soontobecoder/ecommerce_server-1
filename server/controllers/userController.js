@@ -37,12 +37,12 @@ class UserController {
         })
         .then(data => {
             if (!data){
-                throw res.status(401).json({
+                return res.status(401).json({
                     message: "wrong email/password"
                 })
             }
             else if(!compare(payload.password, data.password)){
-                throw res.status(401).json({
+                return res.status(401).json({
                     message: "wrong email/password"
                 })
             }
